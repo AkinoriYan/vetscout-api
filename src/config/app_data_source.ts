@@ -1,6 +1,10 @@
 import { DataSource } from 'typeorm'
 
 export const AppDataSource = new DataSource({
-  type: 'postgres',
-  database: './database.sqlite'
+  type: 'sqlite',
+  database: './agenciadb.sqlite',
+  synchronize: true,
+  entities: ['src/models/**.{ts,js}'],
+  subscribers: [],
+  migrations: []
 })
